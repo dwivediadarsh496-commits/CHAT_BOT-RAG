@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG PDF AI Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <main class="app-container">
+        <header class="chat-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>RAG PDF <span>AI</span></h1>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span class="status-text">System Active</span>
+            </div>
+        </header>
+
+        <section class="chat-window" id="chatWindow">
+            <div class="message system">
+                <div class="message-content">
+                    Hello! I've analyzed the PDF document. How can I help you today?
+                </div>
+                <div class="timestamp">Just now</div>
+            </div>
+        </section>
+
+        <section class="input-area">
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span><span></span><span></span>
+                AI is thinking...
+            </div>
+            <form id="chatForm" class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Ask a question about the document..." autocomplete="off">
+                <button type="submit" id="sendBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                    </svg>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
